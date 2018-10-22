@@ -53,14 +53,6 @@
                                             <outletCollection property="gestureRecognizers" destination="nGQ-y3-gb9" appends="YES" id="dAU-98-LeJ"/>
                                         </connections>
                                     </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="surprised" translatesAutoresizingMaskIntoConstraints="NO" id="dkK-Py-vW6">
-                                        <rect key="frame" x="266" y="43" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="zFC-9c-Fqq" appends="YES" id="5sd-az-AQG"/>
-                                        </connections>
-                                    </imageView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="DDq-ut-n5R">
                                         <rect key="frame" x="266" y="134" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -72,6 +64,14 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="t01-Hg-iwH">
                                         <rect key="frame" x="167" y="6" width="40" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="surprised" translatesAutoresizingMaskIntoConstraints="NO" id="dkK-Py-vW6">
+                                        <rect key="frame" x="266" y="35" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="zFC-9c-Fqq" appends="YES" id="5sd-az-AQG"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,6 +85,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="arrowImageView" destination="t01-Hg-iwH" id="gl5-eL-7dF"/>
                         <outlet property="face1" destination="MiV-I7-27u" id="W0d-TO-CO1"/>
                         <outlet property="face2" destination="DnL-kB-tPa" id="YN6-iS-Z2z"/>
                         <outlet property="face3" destination="dkK-Py-vW6" id="P4a-jA-3Jg"/>

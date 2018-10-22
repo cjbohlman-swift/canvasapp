@@ -25,18 +25,18 @@ class CanvasViewController: UIViewController {
     @IBOutlet weak var face4: UIImageView!
     @IBOutlet weak var face5: UIImageView!
     @IBOutlet weak var face6: UIImageView!
+    @IBOutlet weak var arrowImageView: UIImageView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        trayDownOffset = 200
+        trayDownOffset = 197
         trayUp = trayView.center // The initial position of the tray
         trayDown = CGPoint(x: trayView.center.x ,y: trayView.center.y + trayDownOffset) // The position of the tray transposed down
     }
 
     @IBAction func didPanTray(_ sender: UIPanGestureRecognizer) {
-        print("here")
         let translation = sender.translation(in: view)
         
         if (sender.state == .began) {
@@ -52,11 +52,13 @@ class CanvasViewController: UIViewController {
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1, options:[] , animations: {
                     self.trayView.center = self.trayDown
                 });
+                arrowImageView.image = UIImage(named: "up_arrow")
             } else if (velocity.y < 0) {
                 //moving up
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1, options:[] , animations: {
                     self.trayView.center = self.trayUp
                 });
+                arrowImageView.image = UIImage(named: "down_arrow")
             }
         }
     }
@@ -64,7 +66,6 @@ class CanvasViewController: UIViewController {
     @IBAction func didPanFace(_ sender: UIPanGestureRecognizer) {
         
         let translation = sender.translation(in: view)
-
         
         if (sender.state == .began) {
             let imageView = sender.view as! UIImageView
@@ -84,6 +85,7 @@ class CanvasViewController: UIViewController {
             let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanFaceOnCanvas(sender:)))
             
             // Attach it to a view of your choice. If it's a UIImageView, remember to enable user interaction
+            newlyCreatedFace.transform = view.transform.scaledBy(x: 1.5, y: 1.5)
             newlyCreatedFace.isUserInteractionEnabled = true
             newlyCreatedFace.addGestureRecognizer(panGestureRecognizer)
         }
